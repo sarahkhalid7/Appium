@@ -25,8 +25,8 @@ public class appFactory {
         cap.setCapability(MobileCapabilityType.DEVICE_NAME, configFileReader.getdeviceName());
         cap.setCapability("newCommandTimeout", 100000);
         cap.setCapability(MobileCapabilityType.APP, configFileReader.getappPath());
-        cap.setCapability("appPackage", configFileReader.getappPackage());
-        cap.setCapability("appActivity", configFileReader.getappActivity());
+        //cap.setCapability("appPackage", configFileReader.getappPackage());
+        //cap.setCapability("appActivity", configFileReader.getappActivity());
         driver = new AndroidDriver(new URL(configFileReader.getappiumServerURL()),cap);
         appDriver.setDriver(driver);
 

@@ -9,7 +9,7 @@ import java.util.Properties;
 
 public class configFileReader {
 
-    private Properties properties;
+    private static Properties properties;
     private final String propertyFile = "configurations//config.properties";
 
     public configFileReader (){
@@ -26,6 +26,13 @@ public class configFileReader {
             e.printStackTrace();
         }
     }
+
+    public static String getExcelPath() {
+        String getExcelPath =  properties.getProperty("excelPath");
+        if (getExcelPath != null) return getExcelPath;
+        else throw new RuntimeException("Excelpath  Not Found");
+    }
+
 
     public String getdeviceName(){
         String getdeviceName =  properties.getProperty("deviceName");
